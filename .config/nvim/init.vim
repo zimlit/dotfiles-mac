@@ -6,6 +6,8 @@
 	Plug 'tpope/vim-surround'
 	Plug 'preservim/nerdtree'
 	Plug 'joshdick/onedark.vim/'	
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	let g:deoplete#enable_at_startup = 1
 	
 	call plug#end()
 " }}}
@@ -17,6 +19,8 @@
 	set shiftwidth=2
 	set timeoutlen=500 
 	set tabstop=2	
+	set termguicolors
+	filetype plugin indent on
 	syntax on
 	colorscheme onedark
 " }}}
