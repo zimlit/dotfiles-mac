@@ -7,6 +7,8 @@
 	Plug 'preservim/nerdtree'
 	Plug 'joshdick/onedark.vim/'	
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+	let g:deoplete#sources#go#gocode_binary = '/Users/devinr/golibs/bin/gocode' 
 	let g:deoplete#enable_at_startup = 1
 	
 	call plug#end()
