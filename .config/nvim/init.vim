@@ -143,9 +143,31 @@ augroup end
 " }}}
 
 " statusline {{{
+	function CurrentMode()
+		let l:mode = mode()
+		if l:mode ==# 'n'
+			return "normal"
+		elseif l:mode ==# 'i'
+			return "insert"
+		elseif l:mode ==# 'v'
+			return "visual"
+		elseif l:mode ==# 'V'
+			return "visual line"
+		else
+			return "visual block"
+		endif
+	endfunction
 	set noruler
-	set laststatus=2	
-	set statusline=[%l/%L]\ %c
+	set laststatus=2
+	set statusline=\ %#WildMenu#
+	set statusline+=\ %{CurrentMode()}\ 
+	set statusline+=%#LineNr#
+	set statusline+=\ 
+	set statusline+=%#DiffAdd#
+	set statusline+=\ [%l/%L]\ %c\ 
+	set statusline+=%#LineNr#
 	set statusline+=%= 
-	set statusline+=%f\ -\ %y
+	set statusline+=%#WildMenu#
+	set statusline+=\ %f\ -\ %y\ 
+	set statusline+=%#LineNr#\ 
 " }}}	
