@@ -8,6 +8,8 @@
 	Plug 'joshdick/onedark.vim/'	
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+	Plug 'dense-analysis/ale'
+	Plug 'dag/vim-fish'
 	let g:deoplete#sources#go#gocode_binary = '/Users/devinr/golibs/bin/gocode' 
 	let g:deoplete#enable_at_startup = 1
 	
