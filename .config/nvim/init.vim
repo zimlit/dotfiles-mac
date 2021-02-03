@@ -28,8 +28,9 @@
 	set termguicolors
 	filetype plugin indent on
 	syntax on
+	let g:onedark_terminal_italics = 1
 	colorscheme onedark
-" }}}
+" }}
 
 " mappings {{{
 	let mapleader = " "
@@ -174,20 +175,20 @@ augroup end
 	" current editor mode
 	set statusline+=\ %{CurrentMode()}\ 
 	" seperator
-	set statusline+=%#LineNr#\ 
+	set statusline+=%#StatusLine#\ 
 	" position info
 	set statusline+=%#DiffAdd#
 	set statusline+=\ [%l/%L]\ %c\ 
 	" switch sides
-	set statusline+=%#LineNr#
+	set statusline+=%#StatusLine#
 	set statusline+=%= 
 	" current git branch
 	set statusline+=%#DiffAdd#
 	set statusline+=\ %{GitBranch()}\ 
 	"seperator 
-	set statusline+=%#LineNr#\ 
+	set statusline+=%#StatusLine#\ 
 	" file name and type
 	set statusline+=%#WildMenu#
 	set statusline+=\ %f\ -\ %y\ 
-	set statusline+=%#LineNr#\ 
+	set statusline+=%#StatusLine#\ 
 " }}}	

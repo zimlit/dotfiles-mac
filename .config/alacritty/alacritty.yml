@@ -1,5 +1,9 @@
 # Colors (One Dark)
-
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - -c
+    - "tmux"
 colors:
   # Default colors
   primary:
