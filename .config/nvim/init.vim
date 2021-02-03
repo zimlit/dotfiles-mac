@@ -10,6 +10,8 @@
 	Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 	Plug 'dense-analysis/ale'
 	Plug 'dag/vim-fish'
+	Plug 'tpope/vim-fugitive'
+	Plug 'itchyny/vim-gitbranch'
 	let g:deoplete#sources#go#gocode_binary = '/Users/devinr/golibs/bin/gocode' 
 	let g:deoplete#enable_at_startup = 1
 	
@@ -157,16 +159,34 @@ augroup end
 			return "visual block"
 		endif
 	endfunction
+	function GitBranch()
+		let l:branch = gitbranch#name()
+		if strlen(l:branch) == 0
+			return "not a git repo"
+		else
+			return l:branch
+		endif
+	endfunction
 	set noruler
 	set laststatus=2
+	" padding and first color
 	set statusline=\ %#WildMenu#
+	" current editor mode
 	set statusline+=\ %{CurrentMode()}\ 
-	set statusline+=%#LineNr#
-	set statusline+=\ 
+	" seperator
+	set statusline+=%#LineNr#\ 
+	" position info
 	set statusline+=%#DiffAdd#
 	set statusline+=\ [%l/%L]\ %c\ 
+	" switch sides
 	set statusline+=%#LineNr#
 	set statusline+=%= 
+	" current git branch
+	set statusline+=%#DiffAdd#
+	set statusline+=\ %{GitBranch()}\ 
+	"seperator 
+	set statusline+=%#LineNr#\ 
+	" file name and type
 	set statusline+=%#WildMenu#
 	set statusline+=\ %f\ -\ %y\ 
 	set statusline+=%#LineNr#\ 
