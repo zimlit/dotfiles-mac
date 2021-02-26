@@ -12,6 +12,7 @@
 	Plug 'dag/vim-fish'
 	Plug 'tpope/vim-fugitive'
 	Plug 'itchyny/vim-gitbranch'
+	Plug 'zah/nim.vim'
 	let g:deoplete#sources#go#gocode_binary = '/Users/devinr/golibs/bin/gocode' 
 	let g:deoplete#enable_at_startup = 1
 	
@@ -26,11 +27,12 @@
 	set timeoutlen=500 
 	set tabstop=2	
 	set termguicolors
+	set expandtab
 	filetype plugin indent on
 	syntax on
 	let g:onedark_terminal_italics = 1
 	colorscheme onedark
-" }}
+" }}}
 
 " mappings {{{
 	let mapleader = " "
